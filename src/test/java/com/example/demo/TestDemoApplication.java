@@ -9,6 +9,8 @@ import org.springframework.context.annotation.Bean;
 import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.utility.DockerImageName;
 
+import java.util.Arrays;
+
 @TestConfiguration(proxyBeanMethods = false)
 public class TestDemoApplication {
 
@@ -19,7 +21,7 @@ public class TestDemoApplication {
 	}
 
 	public static void main(String[] args) {
-		SpringApplication.from(DemoApplication::main).with(TestDemoApplication.class).run(args);
+		SpringApplication.from(DemoApplication::main).with(TestDemoApplication.class).run(Arrays.toString(args));
 	}
 
 }

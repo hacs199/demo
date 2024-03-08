@@ -12,4 +12,6 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, Arrays.toString(args));
 	}
 
+	public static void main(java.lang.String[] strings) {
+	}
 }
