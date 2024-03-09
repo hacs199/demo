@@ -1,11 +1,17 @@
 package com.example.demo.entities;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "Mensajes")
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@Builder
 public class Mensajes {
     @Id
     @GeneratedValue(strategy= GenerationType.SEQUENCE)
