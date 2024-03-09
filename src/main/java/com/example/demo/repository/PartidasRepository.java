@@ -14,5 +14,9 @@ public interface PartidasRepository extends JpaRepository<Partidas, Long> {
     List<Partidas> findBydate(LocalDateTime fecha);
 
     @Query("select p from Partidas p where p.participantes = ?1")
-            List<Partidas> findByParticipantes (Integer participantes);
+    List<Partidas> findByParticipantes (Integer participantes);
+
+    List<Partidas> findBycreador(String nombre);
+
+    List<Partidas> findByAno(int fecha);
 }

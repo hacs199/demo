@@ -7,6 +7,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.time.LocalDateTime;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -23,7 +25,7 @@ class MensajesRepositoryTest extends AbstractIntegrationDBTest {
         Mensajes mensaje = Mensajes.builder()
                 .creador("pedro")
                 .contenido("aaaaa")
-                .create_at("1/1/1970")
+                .create_at(LocalDateTime.parse("1/1/1970"))
                 .build();
 
         mensajesRepository.save(mensaje);
@@ -31,7 +33,7 @@ class MensajesRepositoryTest extends AbstractIntegrationDBTest {
         Mensajes mensaje2 = Mensajes.builder()
                 .creador("Pablo")
                 .contenido("bb")
-                .create_at("11/11/2021")
+                .create_at(LocalDateTime.parse("11/11/2021"))
                 .build();
 
         mensajesRepository.save(mensaje2);
@@ -47,7 +49,7 @@ class MensajesRepositoryTest extends AbstractIntegrationDBTest {
         Mensajes mensaje = Mensajes.builder()
                 .creador("adara")
                 .contenido("aaaaa")
-                .create_at("1/1/1970")
+                .create_at(LocalDateTime.parse("1/1/1970"))
                 .build();
         //when
         Mensajes userSaved = mensajesRepository.save(mensaje);

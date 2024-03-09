@@ -1,5 +1,6 @@
 package com.example.demo.entities;
 import jakarta.persistence.*;
+import lombok.*;
 import org.springframework.cglib.core.Local;
 
 import java.time.LocalDateTime;
@@ -7,7 +8,15 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@Data
+
 @Table(name = "Partidas")
+
 public class Partidas {
     @Id
     @GeneratedValue(strategy= GenerationType.SEQUENCE)

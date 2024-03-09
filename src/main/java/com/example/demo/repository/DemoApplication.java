@@ -1,4 +1,4 @@
-package com.example.demo.entities;
+package com.example.demo.repository;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,9 +9,7 @@ import java.util.Arrays;
 public class DemoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, Arrays.toString(args));
+		SpringApplication.run(DemoApplication.class, args);
 	}
 
-	public static void main(java.lang.String[] strings) {
-	}
 }
