@@ -1,5 +1,7 @@
 package com.example.demo.dto.Sugerencia;
 
-public record SugerenciaDto (Long id, String descripcion){
+import java.time.LocalDateTime;
+
+public record SugerenciaDto (Long id, String descripcion, LocalDateTime create_at){
 
 }

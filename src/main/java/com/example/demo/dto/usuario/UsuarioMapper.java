@@ -4,13 +4,21 @@ import com.example.demo.dto.Mensaje.MensajeMapper;
 import com.example.demo.dto.Sugerencia.SugerenciaMapper;
 import com.example.demo.entities.Sugerencia;
 import com.example.demo.entities.Usuario;
+import org.mapstruct.Mapper;
+import org.mapstruct.factory.Mappers;
 
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class UsuarioMapper {
+@Mapper
+public interface UsuarioMapper {
+    UsuarioMapper INSTANCE = Mappers.getMapper(UsuarioMapper.class);
 
+    Usuario usuarioDtoToUsuario(UsuarioDto usuarioDto);
+
+    UsuarioDto usuarioToUsuarioDto(Usuario usuario);
+    /*
     private SugerenciaMapper sugerenciaMapper;
     public Usuario usuarioDtoUsuarioEntity(UsuarioDto usuarioDto){
         Usuario usuario= new Usuario();
@@ -18,12 +26,12 @@ public class UsuarioMapper {
         usuario.setApellido(usuarioDto.apellido());
         usuario.setEmail(usuarioDto.email());
         usuario.setId(usuarioDto.id());
-        /*List<Sugerencia> sugerencia = usuarioDto.sugerencias()
+        List<Sugerencia> sugerencia = usuarioDto.sugerencias()
                 .stream()
                 .map(SugerenciaMapper::sugerenciaDtoToSugerenciaEntity)
                 .collect(Collectors.toList());
         usuario.setSugerencia(sugerencia);
-        return usuario;*/
+        return usuario;
 
         var sugerencias = usuarioDto.sugerencias()
                 .stream()
@@ -64,5 +72,5 @@ public class UsuarioMapper {
                 usuario.getUsername(),
                 usuario.getEmail(),
                 sugerencias, mensajes);
-    }
+    }*/
 }

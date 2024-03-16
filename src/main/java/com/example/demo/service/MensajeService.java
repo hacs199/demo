@@ -5,8 +5,8 @@ import com.example.demo.repository.MensajeRepository;
 
 import java.util.List;
 
-public class MensajeService {
-    private MensajeRepository mensajeRepository;
+public interface MensajeService {
+    /*private MensajeRepository mensajeRepository;
 
     public List<Mensaje> obtenerTodosLosMensajes() {
         return mensajeRepository.findAll();
@@ -22,5 +22,5 @@ public class MensajeService {
     }
     public void eliminarMensaje(Long id) {
         mensajeRepository.deleteById(id);
-    }
+    }*/
 }
